@@ -9,9 +9,11 @@ Files
 **Reference/RDs30.fasta:** sequences of previously defined RD markers used in the standard RD-Analyzer.  
 **Reference/Lineage4.fasta:** sequences of potential Lineage 4 markers identified in the manuscript.  
 
-Prerequisite
+Prerequisites
 ---
-Python 2.7
+Python 2.7  
+BWA MEM  
+SAMtools (v 0.1.19)
 
 Standard RD-Analyzer
 ---
