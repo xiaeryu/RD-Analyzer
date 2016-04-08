@@ -12,7 +12,7 @@ Files
 Prerequisites
 ---
 Python 2.7  
-BWA MEM  
+BWA-MEM  
 SAMtools (v 0.1.19)
 
 Standard RD-Analyzer
