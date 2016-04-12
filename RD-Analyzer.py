@@ -376,7 +376,7 @@ if __name__ == "__main__":
     # Cut-off definition
     if not personalized:
         min = 0.09 * throughput / 4500000
-        min_spec = 3.01 * throughput / 4500000	# Specially for RD12can
+        min_spec = 2.97 * throughput / 4500000	# Specially for RD12can
         coverage = 0.5
     else:
         min = min * throughput / 4500000
