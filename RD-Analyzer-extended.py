@@ -232,7 +232,7 @@ if __name__ == "__main__":
 
     # Throughput calculation:
     throughput = t.calcThroughput(input1)
-    if narg == 2:
+    if narg == 3:
         throughput += t.calcThroughput(input2)
     depth = throughput *1.0 / 4500000
 
