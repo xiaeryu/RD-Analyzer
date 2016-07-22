@@ -229,8 +229,7 @@ class Main:
     def predLineage(self, inDict):
         inLineage = {
             "L1":"Mtb: Indo-Oceanic - Lineage 1 - (RD239)",
-            "L2":"Mtb: East Asian - Lineage 2 - (RD105)",
-            "L21":"Mtb: East Asian - Lineage 2.1- (no RD deletion)",
+            "L21":"Mtb: East Asian - Lineage 2.1 - (RD105)",
             "L221":"Mtb: East Asian - Lineage 2.2.1 - (RD105,207,181)",
             "L2211":"Mtb: East Asian - Lineage 2.2.1.1 - (RD105,207,181,150)",
             "L2212":"Mtb: East Asian - Lineage 2.2.1.2 - (RD105,207,181,142)",
@@ -262,8 +261,6 @@ class Main:
         if inDict['RD239_15'] == 'A':
             lineage.append("L1")
         if inDict['RD105_14'] == 'A' and inDict["RD142_17"] == 'P' and inDict["RD150_18"] == 'P' and inDict["RD181_19"] == 'P' and inDict["RD207_20"] == 'P':
-            lineage.append("L2")
-        if inDict['RD105_14'] == 'P' and inDict["RD142_17"] == 'P' and inDict["RD150_18"] == 'P' and inDict["RD181_19"] == 'P' and inDict["RD207_20"] == 'P' and inDict["7bp_pks15.1"] == 'Complete':
             lineage.append("L21")
         if inDict['RD105_14'] == 'A' and inDict["RD181_19"] == 'A' and inDict["RD207_20"] == 'A' and inDict["RD142_17"] == 'P' and inDict["RD150_18"] == 'P':
             lineage.append("L221")
@@ -322,8 +319,6 @@ class Main:
         if len(lineage) == 0:
             return "Unidentified"
 
-        if len(lineage) > 1 and "L21" in lineage:
-            lineage.remove("L21")
         return '; '.join([inLineage[item] for item in lineage])
 
 
@@ -376,12 +371,12 @@ if __name__ == "__main__":
     # Cut-off definition
     if not personalized:
         min = 0.09 * throughput / 4500000
-        min_spec = 2.97 * throughput / 4500000	# Specially for RD12can
+        min_spec = 2.97 * throughput / 4500000  # Specially for RD12can
         coverage = 0.5
     else:
         min = min * throughput / 4500000
         min_spec = min
-    
+
 
     # Record length of the reference sequences
     RD_length = t.recLength(outprefix+".sort.bam")
@@ -407,7 +402,7 @@ if __name__ == "__main__":
             outStats = t.calcStats(storage[RD], min, RD_length[RD])
         else:
             outStats = t.calcStats(storage[RD], min_spec, RD_length[RD])
-        
+
         percentage = outStats[3]/1.0/RD_length[RD]
         prediction = 'A'
         if percentage > coverage:
