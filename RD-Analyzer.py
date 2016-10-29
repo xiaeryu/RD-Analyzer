@@ -1,5 +1,6 @@
-## Copyright (C) 2016 Kiatichai Faksri (kiatichaifaksri@gmail.com).
-##
+## Copyright (C) 2016 Kiatichai Faksri (kiatichaifaksri@gmail.com) 
+## and Eryu Xia (xiaeryu@u.nus.edu).
+
 ## This program is free software; you can redistribute it and/or
 ## modify it under the terms of the GNU General Public License
 ## as published by the Free Software Foundation; either version 3
@@ -16,7 +17,7 @@
 
 ## --------------------------------
 ## Please report bugs to:
-## kiatichaifaksri@gmail.com
+## xiaeryu@u.nus.edu or kiatichaifaksri@gmail.com
 
 
 import os
