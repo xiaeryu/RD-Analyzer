@@ -351,7 +351,7 @@ if __name__ == "__main__":
         os.system("bwa mem -R '@RG\\tID:RD\\tSM:RD\\tLB:RD\\tPL:Illumina' %s %s %s > %s" % ( dir+"/Reference/RDs30.fasta", input1, input2, outprefix+".sam"))
 
     # Sam to Bam
-    os.system("samtools view -bS %s -o %s" % (outprefix+".sam", outprefix+".bam"))
+    os.system("samtools view -bS -o %s %s" % (outprefix+".bam", outprefix+".sam"))
 
     # Sort Bam file
     os.system("samtools sort %s %s" % (outprefix+".bam", outprefix+".sort"))
